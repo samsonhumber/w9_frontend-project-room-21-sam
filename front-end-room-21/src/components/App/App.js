@@ -4,29 +4,26 @@ import Biography from "../Biography/biography";
 import Navbar from "../Navbar/navbar.js";
 import Dropdown from "../Dropdown/dropdown";
 import Searchbar from "../Searchbar/Searchbar.js";
-
-const bootcampers = [
-  { name: "Jim Halpert", id: 1 },
-  { name: "Pam Beasley", id: 2 },
-  { name: "Dwight Schrute", id: 3 },
-  { name: "Michael Scott", id: 4 },
-  { name: "Ron Swanson", id: 5 },
-  { name: "Leslie Knope", id: 6 },
-  { name: "Ben Wyatt", id: 7 },
-  { name: "April Ludgate", id: 8 },
-];
+import { bootcampers } from "../../data.js";
 
 function App() {
   return (
     <main className="App">
       <Navbar />
-      <div>
+      <div className="search-display">
         <Searchbar />
         <Dropdown />
       </div>
       <div className="bootcamper-display">
         {bootcampers.map((item) => (
-          <Biography id={item.id} bcName={item.name} />
+          <Biography
+            id={item.id}
+            bcName={item.name}
+            avatar={item.avatar}
+            region={item.region}
+            jobTitle={item.jobTitle}
+            desc={item.desc}
+          />
         ))}
       </div>
     </main>

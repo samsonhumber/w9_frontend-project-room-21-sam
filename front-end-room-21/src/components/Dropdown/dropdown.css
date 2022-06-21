@@ -1,23 +1,25 @@
-.dropdown-region{
-    background-color: #23C0A5; 
-    margin: 10px;
-    padding: 10px;
-    font-weight: bold;
-    font-family: 'Inter', sans-serif;
-   
-    
-}
-.dropdown-bootcampers{
-    background-color: #23C0A5; 
+.dropdown-region {
+  background-color: #23c0a5;
+  border: 1px solid #23c0a5;
   margin: 10px;
   padding: 10px;
-
+  height: 40px;
   font-weight: bold;
-  font-family: 'Inter', sans-serif;
-
+  font-family: "Inter", sans-serif;
 }
-.dropdown-bars{
-    display: inline-flex;
-    padding-top: 100px;
-    justify-content: right;
+
+.dropdown-bootcamp {
+  background-color: #23c0a5;
+  border: 1px solid #23c0a5;
+  margin: 10px;
+  padding: 10px;
+  height: 40px;
+  font-weight: bold;
+  font-family: "Inter", sans-serif;
+}
+
+.dropdown-bars {
+  display: inline-flex;
+  padding-top: 0px;
+  justify-content: right;
 }

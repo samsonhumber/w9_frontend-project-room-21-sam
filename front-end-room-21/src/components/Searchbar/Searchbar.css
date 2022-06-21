@@ -6,14 +6,14 @@
 .input-field {
   border: 1px solid #d9d9d9;
   background: #d9d9d9;
-  height: 30px;
+  height: 36px;
   width: 300px;
   margin: 10px;
   text-indent: 10px;
 }
 
 .search-button {
-  height: 34px;
+  height: 40px;
   border: 1px solid #171717;
   background: #f7f7f7;
   color: #171717;

@@ -9,3 +9,7 @@
   flex-flow: row wrap;
   justify-content: space-evenly;
 }
+
+.search-display {
+  padding-top: 50px;
+}
