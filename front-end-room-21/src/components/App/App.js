@@ -11,6 +11,9 @@ const bootcampers = [
   { name: "Dwight Schrute", id: 3 },
   { name: "Michael Scott", id: 4 },
   { name: "Ron Swanson", id: 5 },
+  { name: "Leslie Knope", id: 6 },
+  { name: "Ben Wyatt", id: 7 },
+  { name: "April Ludgate", id: 8 },
 ];
 
 function App() {
@@ -21,7 +24,7 @@ function App() {
         <Searchbar />
         <Dropdown />
       </div>
-      <div>
+      <div className="bootcamper-display">
         {bootcampers.map((item) => (
           <Biography id={item.id} bcName={item.name} />
         ))}
