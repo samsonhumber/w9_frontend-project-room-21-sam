@@ -5,10 +5,10 @@ import Navbar from "../Navbar/navbar.js";
 
 function App() {
   return (
-    <div className="App">
+    <main className="App">
       <Navbar />
       <Biography />
-    </div>
+    </main>
   );
 }
 
