@@ -1,0 +1,23 @@
+.dropdown-region{
+    background-color: #23C0A5; 
+    margin: 10px;
+    padding: 10px;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+   
+    
+}
+.dropdown-bootcampers{
+    background-color: #23C0A5; 
+  margin: 10px;
+  padding: 10px;
+
+  font-weight: bold;
+  font-family: 'Inter', sans-serif;
+
+}
+.dropdown-bars{
+    display: flex;
+    padding-top: 100px;
+    justify-content: right;
+}
