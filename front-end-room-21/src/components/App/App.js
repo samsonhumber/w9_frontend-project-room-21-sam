@@ -17,14 +17,15 @@ function App() {
   return (
     <main className="App">
       <Navbar />
-      <Dropdown />
-      <Searchbar />
+      <div>
+        <Searchbar />
+        <Dropdown />
+      </div>
       <div>
         {bootcampers.map((item) => (
           <Biography id={item.id} bcName={item.name} />
         ))}
       </div>
-      <div><Searchbar /><Dropdown/></div>
     </main>
   );
 }
