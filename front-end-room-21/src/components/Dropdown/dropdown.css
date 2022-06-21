@@ -17,7 +17,7 @@
 
 }
 .dropdown-bars{
-    display: flex;
+    display: inline-flex;
     padding-top: 100px;
     justify-content: right;
 }
