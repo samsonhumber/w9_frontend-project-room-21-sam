@@ -24,7 +24,7 @@ function App() {
           <Biography id={item.id} bcName={item.name} />
         ))}
       </div>
-      <Biography />
+      <div><Searchbar /><Dropdown/></div>
     </main>
   );
 }
