@@ -1,0 +1,20 @@
+
+
+.div-Container{
+    width: 250px;
+    height: 250px;
+  background: white;  
+  border-radius: 25px;
+  padding: 10px 0px;
+  margin: 70px auto; /*remove when main container finished*/
+
+
+
+  
+
+}
+.bootcamper-picture{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%
+}
