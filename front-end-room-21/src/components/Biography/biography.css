@@ -1,20 +1,34 @@
 
 
 .div-Container{
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 320px;
   background: white;  
   border-radius: 25px;
   padding: 10px 0px;
   margin: 70px auto; /*remove when main container finished*/
-
-
-
   
-
 }
 .bootcamper-picture{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    padding: 0px;
+}
+.name{
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    line-height: 5px;
+    font-weight: bold;
+
+}
+.profession{
+font-family: 'Inter', sans-serif;
+font-size: 15px;
+line-height: 5px;
+}
+.bio{
+   font-family:  'Inter', sans-serif;
+   font-size: 15;
+  
 }
