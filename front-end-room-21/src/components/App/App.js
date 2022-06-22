@@ -5,8 +5,30 @@ import Navbar from "../Navbar/navbar.js";
 import Dropdown from "../Dropdown/dropdown";
 import Searchbar from "../Searchbar/Searchbar.js";
 import { bootcampers } from "../../data.js";
+import { useState, useEffect } from 'react';
 
 function App() {
+  //const [allData, setAllData] = useState([]);
+    useEffect(() => {
+      async function fetchData() {
+        console.log("running fetch");
+        try {
+          const response = await fetch(
+            `http://localhost:7000/profiles`
+          );
+          const responseJSON = await response.json();
+          const responseData = responseJSON.payload;
+          //setAllData(responseData);
+          console.log(responseData);
+        }
+        catch (err){
+          const responseData = "Sorry, we couldn't find the person you wanted."
+          console.log(responseData);
+        } 
+      }
+      fetchData();
+    }, []);
+
   return (
     <main className="App">
       <Navbar />
