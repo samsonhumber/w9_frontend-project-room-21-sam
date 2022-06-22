@@ -1,24 +1,46 @@
-import './dropdown.css'
+import "./dropdown.css";
 
-const region = [ 'Select your Region','West Midland', 'East Midland', 'London, North', 'North West','South West','South East', 'Yorkshire ']
-const bootcamper = ['Select Bootcamper','Jessica ownes','Sasha Davis','Sandy beech','Jack Harlow', 'simon lee']
-function Dropdown (){
-    return(
-        <div className = 'dropdown-bars'>
-        <select
-   name="region"
-    className='dropdown-region'>
-    {region.map((regions,index)=><option key={index}> {regions}
-    </option>)}  
-   </select>
- <select
-   name="bootcampers"
-    className='dropdown-bootcampers'>
-    {bootcamper.map((bootcampers,index)=><option key={index}> {bootcampers}
-    </option>)}  
-   </select>
-</div>
-    )
-
+const region = [
+  "Select a region",
+  "West Midlands",
+  "East Midlands",
+  "Greater London",
+  "North East",
+  "North West",
+  "South East",
+  "South West",
+  "East of England",
+  "Yorkshire and the Humber",
+];
+const bootcamp = [
+  "Select a bootcamp",
+  "Cohort 1",
+  "Cohort 2",
+  "Cohort 3",
+  "Cohort 4",
+  "Cohort 5",
+  "Cohort 6",
+  "Cohort 7",
+  "Cohort 8",
+  "Cohort 9",
+  "Cohort 10",
+  "Cohort 11",
+  "Cohort 12",
+];
+function Dropdown() {
+  return (
+    <div className="dropdown-bars">
+      <select name="region" className="dropdown-region">
+        {region.map((regions, index) => (
+          <option key={index}> {regions}</option>
+        ))}
+      </select>
+      <select name="bootcamp" className="dropdown-bootcamp">
+        {bootcamp.map((cohort, index) => (
+          <option key={index}> {cohort}</option>
+        ))}
+      </select>
+    </div>
+  );
 }
-export default Dropdown
+export default Dropdown;

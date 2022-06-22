@@ -1,47 +1,48 @@
-
-
-.div-Container{
-    width: 300px;
-    height: 320px;
-  background: white;  
+.div-container {
+  width: 300px;
+  height: 360px;
+  background: #fff;
   border-radius: 25px;
+  padding: 30px 0px;
+  margin: 50px auto;
+}
+.bootcamper-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
   padding: 10px 0px;
-  margin: 70px auto; /*remove when main container finished*/
-  
 }
-.bootcamper-picture{
-    width: 190px;
-    height: 190px;
-    border-radius: 50%;
-    padding:1 0px;
+.name {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
 }
-.name{
-    font-family: 'Inter', sans-serif;
-    font-size: 20px;
-    line-height: 5px;
-    font-weight: bold;
-
+.jobTitle {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  margin: 0px;
 }
-.jobTitle{
-font-family: 'Inter', sans-serif;
-font-size: 15px;
-line-height: 5px;
-}
-.bio{
-   font-family:  'Inter', sans-serif;
-   font-size: 15;
-   line-height:1 ;
-  
+.bio {
+  font-family: "Inter", sans-serif;
+  font-size: 15;
+  margin: 10px 20px;
+  text-align: center;
 }
 p {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
 }
-.region{
-    font-family: 'Inter', sans-serif;
-    font-size: 15px;
-    line-height: 5px;
-    }
+.region {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  margin: 0px;
+}
+
+.link {
+  text-decoration: none;
+  color: grey;
+  font-size: 12px;
+}
