@@ -38,12 +38,12 @@ function Dropdown({ handleDropdownSelect }) {
         onChange={handleDropdownSelect}
       >
         {region.map((regions, index) => (
-          <option key={index} value={regions.value}>
+          <option key={index} value={regions.value} aria-label='dropdown menu region'>
             {regions.text}
           </option>
         ))}
       </select>
-      <select name="bootcamp" className="dropdown-bootcamp">
+      <select name="bootcamp" className="dropdown-bootcamp" aria-label='dropdown menu cohort number'>
         {bootcamp.map((cohort, index) => (
           <option key={index}> {cohort}</option>
         ))}

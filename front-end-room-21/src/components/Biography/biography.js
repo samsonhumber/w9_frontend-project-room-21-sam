@@ -3,7 +3,7 @@ import "./biography.css";
 
 function Biography({ bcName, id, avatar, region, jobTitle, desc }) {
   return (
-    <div className="div-container">
+    <div className="div-container" aria-label='profile-bio'>
       <img
         className="bootcamper-picture"
         src={avatar}
