@@ -6,10 +6,10 @@ export function BioList({bootcampers}) {
           <Biography
             id={item.id}
             bcName={item.name}
-            avatar={item.avatar}
+            avatar={item.imagelink}
             region={item.region}
-            jobTitle={item.jobTitle}
-            desc={item.desc}
+            jobTitle={item.jobtitle}
+            desc={item.description}
           />
         )
         )
