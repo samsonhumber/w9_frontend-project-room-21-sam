@@ -7,7 +7,7 @@ function Searchbar({ text, handleChange, handleAdd }) {
       <input
         onChange={handleChange}
         className="input-field"
-        placeholder="Search by name or region..."
+        placeholder="Search by name..."
       ></input>
       <button onClick={handleAdd} className="search-button">
         Search
