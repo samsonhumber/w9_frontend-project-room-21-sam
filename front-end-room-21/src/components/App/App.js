@@ -2,9 +2,9 @@ import "./App.css";
 import Navbar from "../Navbar/navbar.js";
 import Dropdown from "../Dropdown/dropdown";
 import Searchbar from "../Searchbar/Searchbar.js";
-import { bootcampers } from "../../data.js";
-import { useState, useEffect, useReducer } from "react";
+import { useState, useEffect } from "react";
 import { BioList } from "../BiosList/bioList";
+import useRegionFetch from "../../hooks/useRegionFetch";
 
 function App() {
   const [text, setText] = useState();
@@ -38,7 +38,6 @@ function App() {
         const response = await fetch(url);
         const responseJSON = await response.json();
         const responseData = responseJSON.payload;
-        //setAllData(responseData);
         console.log(responseData);
         setBioData(responseData);
       } catch (err) {
