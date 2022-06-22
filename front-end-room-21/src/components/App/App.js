@@ -1,18 +1,27 @@
 import "./App.css";
-import Biography from "../Biography/biography";
 import Navbar from "../Navbar/navbar.js";
 import Dropdown from "../Dropdown/dropdown";
 import Searchbar from "../Searchbar/Searchbar.js";
 import { bootcampers } from "../../data.js";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useReducer } from "react";
+import { BioList } from "../BiosList/bioList";
 
 function App() {
   const [text, setText] = useState();
   const [searchtext, setSearchtext] = useState();
+  const [dropdownRegion, setdropDownRegion] = useState("");
+  // NOTE: try a useReducer to account for many cases
+  const [bioData, setBioData] = useState([]);
+
 
   function handleChange(e) {
     setText(e.target.value);
     /* Updates every time you type into the Searchbar input. When you setText, that is the current value of whatever is typed there. */
+  }
+
+  function handleDropdownSelect(e) {
+    console.log("Region selected");
+    setdropDownRegion(e.target.value);
   }
 
   function handleAdd() {
@@ -24,21 +33,24 @@ function App() {
   console.log(searchtext);
   //const [allData, setAllData] = useState([]);
   useEffect(() => {
-    async function fetchData() {
+    async function fetchRegionData() {
       console.log("running fetch");
       try {
-        const response = await fetch(`http://localhost:7000/profiles`);
+        const url = "http://localhost:9000/profiles/?region="+dropdownRegion;
+        console.log(url);
+        const response = await fetch(url);
         const responseJSON = await response.json();
         const responseData = responseJSON.payload;
         //setAllData(responseData);
         console.log(responseData);
+        setBioData(responseData);
       } catch (err) {
         const responseData = "Sorry, we couldn't find the person you wanted.";
         console.log(responseData);
       }
     }
-    fetchData();
-  }, []);
+    fetchRegionData();
+  }, [dropdownRegion]);
 
   return (
     <main className="App">
@@ -49,20 +61,10 @@ function App() {
           handleChange={handleChange}
           handleAdd={handleAdd}
         />
-        <Dropdown />
+        <Dropdown handleDropdownSelect={handleDropdownSelect}/>
       </div>
-      <div className="bootcamper-display">
-        {bootcampers.map((item) => (
-          <Biography
-            id={item.id}
-            bcName={item.name}
-            avatar={item.avatar}
-            region={item.region}
-            jobTitle={item.jobTitle}
-            desc={item.desc}
-          />
-        ))}
-      </div>
+      <BioList bootcampers={bioData}/>
+      
     </main>
   );
 }
