@@ -4,7 +4,7 @@ import Dropdown from "../Dropdown/dropdown";
 import Searchbar from "../Searchbar/Searchbar.js";
 import { useState, useEffect } from "react";
 import { BioList } from "../BiosList/bioList";
-import useRegionFetch from "../../hooks/useRegionFetch";
+//import useRegionFetch from "../../hooks/useRegionFetch";
 
 function App() {
   const [text, setText] = useState();
@@ -12,16 +12,19 @@ function App() {
   const [dropdownRegion, setdropDownRegion] = useState("");
   // NOTE: try a useReducer to account for many cases
   const [bioData, setBioData] = useState([]);
+  //useRegionFetch({ dropdownRegion, setBioData, setdropDownRegion })
 
   function handleChange(e) {
     setText(e.target.value);
     /* Updates every time you type into the Searchbar input. When you setText, that is the current value of whatever is typed there. */
   }
 
+  
   function handleDropdownSelect(e) {
     console.log("Region selected");
     setdropDownRegion(e.target.value);
   }
+  
 
   function handleAdd() {
     console.log("The Search Button was clicked.");
