@@ -1,19 +1,18 @@
 import "./dropdown.css";
 
 const region = [
-  "Select a region",
-  "West Midlands",
-  //{id: 0, text:  value: null},
-  //{id: 1, text:  value: "West%Midlands"
-  "East Midlands",
-  "Greater London",
-  "North East",
-  "North West",
-  "South East",
-  "South West",
-  "East of England",
-  "Yorkshire and the Humber",
+  { text: "Select a region", value: " " },
+  { text: "West Midlands", value: "West%Midlands" },
+  { text: "East Midlands", value: "East%Midlands" },
+  { text: "Greater London", value: "Greater%London" },
+  { text: "North East", value: "North%East" },
+  { text: "North West", value: "North%West" },
+  { text: "South East", value: "South%East" },
+  { text: "South West", value: "South%West" },
+  { text: "East of England", value: "East%of%England" },
+  { text: "Yorkshire and the Humber", value: "Yorkshire" },
 ];
+
 const bootcamp = [
   "Select a bootcamp",
   "Cohort 1",
@@ -29,12 +28,19 @@ const bootcamp = [
   "Cohort 11",
   "Cohort 12",
 ];
-function Dropdown({handleDropdownSelect}) {
+
+function Dropdown({ handleDropdownSelect }) {
   return (
     <div className="dropdown-bars">
-      <select name="region" className="dropdown-region" onChange={handleDropdownSelect}>
+      <select
+        name="region"
+        className="dropdown-region"
+        onChange={handleDropdownSelect}
+      >
         {region.map((regions, index) => (
-          <option key={index}> {regions}</option>
+          <option key={index} value={regions.value}>
+            {regions.text}
+          </option>
         ))}
       </select>
       <select name="bootcamp" className="dropdown-bootcamp">
