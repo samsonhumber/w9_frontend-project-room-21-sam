@@ -1,7 +1,6 @@
 import "./Searchbar.css";
 
-function Searchbar({ text, handleChange, handleAdd }) {
-  console.log(text);
+function Searchbar({ handleChange, handleSearch }) {
   return (
     <div className="searchbar-div">
       <input
@@ -9,7 +8,7 @@ function Searchbar({ text, handleChange, handleAdd }) {
         className="input-field"
         placeholder="Search by name..."
       ></input>
-      <button onClick={handleAdd} className="search-button" aria-label='searchbar'>
+      <button onClick={handleSearch} className="search-button" aria-label='searchbar'>
         Search
       </button>
     </div>
