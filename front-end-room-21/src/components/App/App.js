@@ -10,6 +10,7 @@ function App() {
   const [text, setText] = useState();
   const [searchtext, setSearchtext] = useState();
   const [dropdownRegion, setdropDownRegion] = useState("");
+  const [dropdownBootcamp, setDropdownBootcamp] = useState("");
   // NOTE: try a useReducer to account for many cases
   const [bioData, setBioData] = useState([]);
   //useRegionFetch({ dropdownRegion, setBioData, setdropDownRegion })
@@ -19,12 +20,15 @@ function App() {
     /* Updates every time you type into the Searchbar input. When you setText, that is the current value of whatever is typed there. */
   }
 
-  
   function handleDropdownSelect(e) {
     console.log("Region selected");
     setdropDownRegion(e.target.value);
   }
-  
+
+  function handleDropdownBootcamp(e) {
+    console.log("Bootcamp selected");
+    setDropdownBootcamp(e.target.value);
+  }
 
   function handleAdd() {
     console.log("The Search Button was clicked.");
@@ -34,7 +38,7 @@ function App() {
 
   useEffect(() => {
     async function fetchRegionData() {
-      console.log("running fetch for dropdown");
+      console.log("running fetch for dropdown region");
       try {
         const url = "http://localhost:9000/profiles/?region=" + dropdownRegion;
         console.log(url);
@@ -44,12 +48,32 @@ function App() {
         console.log(responseData);
         setBioData(responseData);
       } catch (err) {
-        const responseData = "Sorry, we couldn't find the person you wanted.";
+        const responseData = "Sorry, we couldn't find the data you wanted.";
         console.log(responseData);
       }
     }
     fetchRegionData();
   }, [dropdownRegion]);
+
+  useEffect(() => {
+    async function fetchBootcampData() {
+      console.log("GET request from Cohort dropdown.");
+      try {
+        const url =
+          "http://localhost:9000/profiles/?Bootcampnumber=" + dropdownBootcamp;
+        console.log(url);
+        const response = await fetch(url);
+        const responseJSON = await response.json();
+        const responseData = responseJSON.payload;
+        console.log(responseData);
+        setBioData(responseData);
+      } catch (err) {
+        const responseData = "Sorry, we couldn't find the data you wanted.";
+        console.log(responseData);
+      }
+    }
+    fetchBootcampData();
+  }, [dropdownBootcamp]);
 
   useEffect(() => {
     async function fetchNameSearch() {
@@ -79,7 +103,10 @@ function App() {
           handleChange={handleChange}
           handleAdd={handleAdd}
         />
-        <Dropdown handleDropdownSelect={handleDropdownSelect} />
+        <Dropdown
+          handleDropdownSelect={handleDropdownSelect}
+          handleDropdownBootcamp={handleDropdownBootcamp}
+        />
       </div>
       <BioList bootcampers={bioData} />
     </main>

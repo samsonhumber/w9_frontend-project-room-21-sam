@@ -14,22 +14,22 @@ const region = [
 ];
 
 const bootcamp = [
-  "Select a bootcamp",
-  "Cohort 1",
-  "Cohort 2",
-  "Cohort 3",
-  "Cohort 4",
-  "Cohort 5",
-  "Cohort 6",
-  "Cohort 7",
-  "Cohort 8",
-  "Cohort 9",
-  "Cohort 10",
-  "Cohort 11",
-  "Cohort 12",
+  { text: "Select a bootcamp", value: "none" },
+  { text: "Cohort 1", value: 1 },
+  { text: "Cohort 2", value: 2 },
+  { text: "Cohort 3", value: 3 },
+  { text: "Cohort 4", value: 4 },
+  { text: "Cohort 5", value: 5 },
+  { text: "Cohort 6", value: 6 },
+  { text: "Cohort 7", value: 7 },
+  { text: "Cohort 8", value: 8 },
+  { text: "Cohort 9", value: 9 },
+  { text: "Cohort 10", value: 10 },
+  { text: "Cohort 11", value: 11 },
+  { text: "Cohort 12", value: 12 },
 ];
 
-function Dropdown({ handleDropdownSelect }) {
+function Dropdown({ handleDropdownSelect, handleDropdownBootcamp }) {
   return (
     <div className="dropdown-bars">
       <select
@@ -43,9 +43,11 @@ function Dropdown({ handleDropdownSelect }) {
           </option>
         ))}
       </select>
-      <select name="bootcamp" className="dropdown-bootcamp" aria-label='dropdown menu cohort number'>
+      <select name="bootcamp" className="dropdown-bootcamp" onChange={handleDropdownBootcamp} aria-label='dropdown menu cohort number'>
         {bootcamp.map((cohort, index) => (
-          <option key={index}> {cohort}</option>
+          <option key={index} value={cohort.value}>
+            {cohort.text}
+          </option>
         ))}
       </select>
     </div>
