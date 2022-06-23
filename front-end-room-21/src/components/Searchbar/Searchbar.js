@@ -9,7 +9,7 @@ function Searchbar({ text, handleChange, handleAdd }) {
         className="input-field"
         placeholder="Search by name..."
       ></input>
-      <button onClick={handleAdd} className="search-button">
+      <button onClick={handleAdd} className="search-button" aria-label='searchbar'>
         Search
       </button>
     </div>
