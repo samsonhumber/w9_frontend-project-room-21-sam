@@ -4,20 +4,16 @@ import Dropdown from "../Dropdown/dropdown";
 import Searchbar from "../Searchbar/Searchbar.js";
 import { useState, useEffect } from "react";
 import { BioList } from "../BiosList/bioList";
-//import useRegionFetch from "../../hooks/useRegionFetch";
 
 function App() {
   const [text, setText] = useState();
   const [searchtext, setSearchtext] = useState();
   const [dropdownRegion, setdropDownRegion] = useState("");
   const [dropdownBootcamp, setDropdownBootcamp] = useState("");
-  // NOTE: try a useReducer to account for many cases
   const [bioData, setBioData] = useState([]);
-  //useRegionFetch({ dropdownRegion, setBioData, setdropDownRegion })
 
   function handleChange(e) {
     setText(e.target.value);
-    /* Updates every time you type into the Searchbar input. When you setText, that is the current value of whatever is typed there. */
   }
 
   function handleDropdownSelect(e) {
@@ -33,7 +29,6 @@ function App() {
   function handleAdd() {
     console.log("The Search Button was clicked.");
     setSearchtext(text);
-    /* This is performed onClick in the Searchbar component, on the 'search' button. When you setSearchText, it sets a string value from the input bar as searchtext. We can then take this searchtext string, and send it to the API in a GET request for anything that contains or matches the searchtext string. */
   }
 
   useEffect(() => {

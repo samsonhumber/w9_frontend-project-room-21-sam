@@ -1,5 +1,4 @@
 import "./biography.css";
-// import {useState} from "react"
 
 function Biography({ bcName, id, avatar, region, jobTitle, desc }) {
   return (
@@ -19,7 +18,7 @@ function Biography({ bcName, id, avatar, region, jobTitle, desc }) {
         <em>{jobTitle}</em>
       </p>
       <p className="bio">"{desc}"</p>
-      <a className="link" href="https://www.google.com/">
+      <a className="link" href="https://www.schoolofcode.co.uk/">
         <i>Click to expand</i>
       </a>
     </div>

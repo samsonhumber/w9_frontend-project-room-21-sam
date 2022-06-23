@@ -11,8 +11,8 @@ function Navbar() {
                     </a>
                 </li>
                 <li className="nav-point">
-                    <a className="nav-link" href="google.com" aria-label='home page'>
-                        Home
+                    <a className="nav-link" href="google.com" aria-label='catch up page'>
+                        Catch Up
                     </a>
                 </li>
                 <li className="nav-point">
@@ -21,8 +21,8 @@ function Navbar() {
                     </a>
                 </li>
                 <li className="nav-point">
-                    <a className="nav-link" href="google.com" aria-label='catchb up page'>
-                        Catch Up
+                    <a className="nav-link" href="google.com" aria-label='home page'>
+                        Home
                     </a>
                 </li>
             </ul>
