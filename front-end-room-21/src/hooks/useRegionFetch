@@ -1,27 +1,27 @@
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
-export default async function useRegionFetch({ dropdownRegion, setBioData, setdropDownRegion }) {
-  const useEffectRegion = useEffect(() => {
-    async function fetchRegionData() {
-      console.log("running fetch for dropdown");
-      try {
-        const url = "http://localhost:9000/profiles/?region=" + dropdownRegion;
-        console.log(url);
-        const response = await fetch(url);
-        const responseJSON = await response.json();
-        const responseData = responseJSON.payload;
-        console.log(responseData);
-        setBioData(responseData);
-      } catch (err) {
-        const responseData = "Sorry, we couldn't find the person you wanted.";
-        console.log(responseData);
-      }
-    }
-    fetchRegionData();
-  }, [dropdownRegion]);
-  function handleDropdownSelect(e) {
-    console.log("Region selected");
-    setdropDownRegion(e.target.value);
-  }
-  return { useEffectRegion, handleDropdownSelect }
-}
+// export default async function useRegionFetch({ dropdownRegion, setBioData, setdropDownRegion }) {
+//   const useEffectRegion = useEffect(() => {
+//     async function fetchRegionData() {
+//       console.log("running fetch for dropdown");
+//       try {
+//         const url = "http://localhost:9000/profiles/?region=" + dropdownRegion;
+//         console.log(url);
+//         const response = await fetch(url);
+//         const responseJSON = await response.json();
+//         const responseData = responseJSON.payload;
+//         console.log(responseData);
+//         setBioData(responseData);
+//       } catch (err) {
+//         const responseData = "Sorry, we couldn't find the person you wanted.";
+//         console.log(responseData);
+//       }
+//     }
+//     fetchRegionData();
+//   }, [dropdownRegion]);
+//   function handleDropdownSelect(e) {
+//     console.log("Region selected");
+//     setdropDownRegion(e.target.value);
+//   }
+//   return { useEffectRegion, handleDropdownSelect }
+// }

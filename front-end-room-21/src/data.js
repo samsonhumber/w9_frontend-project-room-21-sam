@@ -1,4 +1,4 @@
-export const bootcampers = [
+/* export const bootcampers = [
   {
     name: "Joe King",
     id: 1,
@@ -71,4 +71,4 @@ export const bootcampers = [
     avatar:
       "https://cdn.discordapp.com/attachments/988860447098810369/988860502195179520/freepik3d.jpg",
   },
-];
+]; */
