@@ -33,7 +33,7 @@ function App() {
 
   useEffect(() => {
     async function fetchRegionData() {
-      console.log("running fetch for dropdown region");
+      console.log("GET request from Region dropdown.");
       try {
         const url = "http://localhost:9000/profiles/?region=" + dropdownRegion;
         console.log(url);
@@ -72,7 +72,7 @@ function App() {
 
   useEffect(() => {
     async function fetchNameSearch() {
-      console.log("running fetch by name from searchbar");
+      console.log("GET request from searchbar entry.");
       try {
         const url = "http://localhost:9000/profiles/?name=" + searchtext;
         console.log(url);

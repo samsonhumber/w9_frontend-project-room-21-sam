@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fascinate&display=swap');
+
 .nav-container {
   top: 0px;
   left: 0px;
@@ -15,6 +17,8 @@
   list-style-type: none;
   padding: 0px 40px;
   font-weight: bold;
+  font-family: 'Fascinate', cursive;
+  font-size: 40px;
 }
 
 .nav-point {

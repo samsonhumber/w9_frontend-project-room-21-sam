@@ -7,7 +7,7 @@ function Navbar() {
                 <li className="nav-appname">
 
                     <a className="nav-link" href="google.com">
-                        App Name
+                        .Class
                     </a>
                 </li>
                 <li className="nav-point">
