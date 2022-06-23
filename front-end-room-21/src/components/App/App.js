@@ -55,13 +55,12 @@ function App() {
     fetchRegionData();
   }, [dropdownRegion]);
 
-  /* BELOW IS CODE FOR BOOTCAMP DROPDOWN. Not currently working. The toString is throwing a NaN error but without the piece of data being stringified*/
   useEffect(() => {
     async function fetchBootcampData() {
-      console.log("running fetch for dropdown bootcamp");
+      console.log("GET request from Cohort dropdown.");
       try {
         const url =
-          "http://localhost:9000/profiles/?bootcampNumber=" + dropdownBootcamp;
+          "http://localhost:9000/profiles/?Bootcampnumber=" + dropdownBootcamp;
         console.log(url);
         const response = await fetch(url);
         const responseJSON = await response.json();
@@ -75,7 +74,6 @@ function App() {
     }
     fetchBootcampData();
   }, [dropdownBootcamp]);
-  // /* ABOVE IS CODE FOR BOOTCAMP DROPDOWN. Not currently working. */
 
   useEffect(() => {
     async function fetchNameSearch() {
