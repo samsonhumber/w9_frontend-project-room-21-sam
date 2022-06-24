@@ -12,7 +12,7 @@ const region = [
   ];
   
   const bootcamp = [
-    { text: "Select a bootcamp", value: "none" },
+    { text: "Select a bootcamp", value: 0 },
     { text: "Cohort 1", value: 1 },
     { text: "Cohort 2", value: 2 },
     { text: "Cohort 3", value: 3 },
@@ -26,5 +26,17 @@ const region = [
     { text: "Cohort 11", value: 11 },
     { text: "Cohort 12", value: 12 },
   ];
+
+  const jobTitle = [
+    {text: 'Select a job title', value: " "},
+    {text: 'Bootcamper', value: 'bootcamper'},
+    {text: 'Front-end Developer', value: 'frontend'},
+    {text: 'Back-end Developer', value: 'backend'},
+    {text: 'Full Stack Developer', value: 'fullstack'},
+    {text: 'UI/UX', value: 'uiux'},
+    {text: 'Coach', value: 'coach'},
+    {text: 'DevOps', value: 'devops'},
+    {text: 'Director', value: 'director'}
+  ]
 
   export const filters = [{category: 'region', data: region}, {category: 'Bootcampnumber', data: bootcamp}];
