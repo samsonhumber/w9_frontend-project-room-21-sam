@@ -3,7 +3,7 @@ import Navbar from "../Navbar/navbar.js";
 import Dropdown from "../Dropdown/dropdown";
 import Searchbar from "../Searchbar/Searchbar.js";
 import { useState, useEffect } from "react";
-import { BioList } from "../BiosList/bioList";
+import { BioList } from "../BioList/bioList";
 
 function App() {
   const [text, setText] = useState();
