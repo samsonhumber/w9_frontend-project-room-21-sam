@@ -3,28 +3,21 @@ import Navbar from "../Navbar/navbar.js";
 import Dropdown from "../Dropdown/dropdown";
 import Searchbar from "../Searchbar/Searchbar.js";
 import { useState, useEffect } from "react";
-import { BioList } from "../BioList/bioList";
-import { fetchData} from "../../hooks";
+import { BioList, } from "../BioList/bioList";
+import { fetchData, bioState, useRegion} from "../../hooks";
 
 function App() {
   const [text, setText] = useState();
   const [searchtext, setSearchtext] = useState();
-  const [dropdownRegion, setdropDownRegion] = useState("");
+  const [bioData, setBioData] = bioState();
+  //const [dropdownRegion, setDropdownRegion] = useState("");
   //const [dropdownBootcamp, setDropdownBootcamp] = useState("");
   //const [bioData, setBioData] = useState([]);
 
   function handleChange(e) {
     setText(e.target.value);
   }
-
   
-
-  /*
-  function handleDropdownSelect(e) {
-    console.log("Region selected");
-    setdropDownRegion(e.target.value);
-  }
-  */
 
   function handleDropdownBootcamp(e) {
     console.log("Bootcamp selected");
@@ -36,25 +29,25 @@ function App() {
     setSearchtext(text);
   }
 
-  //const [dropdownRegion, setDropdownRegion, bioData, fetchRegionData, setBioData] = useRegion();
+  const [dropdownRegion, setDropdownRegion, fetchRegionData] = useRegion();
+  const [setDropdownBootcamp, dropdownBootcamp, fetchBootcampData] = fetchData();
 
-  function handleDropdownRegion(e) {
-    console.log("Region selected");
-    setdropDownRegion(e.target.value);
-  }
-  
-  /* useEffect(() => {
+  useEffect(() => {
      fetchRegionData();
-  }, [dropdownRegion]) */
-
-  const [setDropdownBootcamp, dropdownBootcamp, bioData, fetchBootcampData, setBioData] = fetchData();
+  }, [dropdownRegion]) 
 
   useEffect(() => {
     fetchBootcampData();
- }, [dropdownBootcamp])
+  }, [dropdownBootcamp])
 
 
-  useEffect(() => {
+  function handleDropdownRegion(e) {
+    console.log("Region selected");
+    setDropdownRegion(e.target.value);
+  }
+  
+
+  /*useEffect(() => {
     async function fetchRegionData() {
       console.log("GET request from Region dropdown.");
       try {
@@ -72,6 +65,7 @@ function App() {
     }
     fetchRegionData();
   }, [dropdownRegion]);
+  */
 /*
   useEffect(() => {
     async function fetchBootcampData() {
@@ -93,7 +87,7 @@ function App() {
     fetchBootcampData();
   }, [dropdownBootcamp]);
 */
-  useEffect(() => {
+  /*useEffect(() => {
     async function fetchNameSearch() {
       console.log("GET request from searchbar entry.");
       try {
@@ -111,6 +105,7 @@ function App() {
     }
     fetchNameSearch();
   }, [searchtext]);
+  */
 
 
 

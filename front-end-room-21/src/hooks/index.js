@@ -1,14 +1,19 @@
 import { useState } from 'react'
 
+const bioState = function BioState() {
+  const [bioData, setBioData] = useState([]);
+  return [bioData, setBioData];
+}
+
 const useRegion = function UseRegion() {
-    const [dropDownRegion, setDropDownRegion] = useState("");
-    const [bioData, setBioData] = useState([]);
+    const [dropdownRegion, setDropdownRegion] = useState("");
+    const [bioData, setBioData] = bioState();
   
     // load items
     const fetchRegionData = async () => {
         console.log("GET request from Region dropdown.");
         try {
-          const url = "http://localhost:9000/profiles/?region=" + dropDownRegion;
+          const url = "http://localhost:9000/profiles/?region=" + dropdownRegion;
           console.log(url);
           const response = await fetch(url);
           const responseJSON = await response.json();
@@ -21,12 +26,12 @@ const useRegion = function UseRegion() {
         }
     };
   
-    return [dropDownRegion, setDropDownRegion, bioData, fetchRegionData, setBioData];
+    return [dropdownRegion, setDropdownRegion, fetchRegionData];
 };
 
 const fetchData = function FetchData() {
   const [dropdownBootcamp, setDropdownBootcamp] = useState("");
-  const [bioData, setBioData] = useState([]);
+  const [bioData, setBioData] = bioState();
 
   const fetchBootcampData = async () => {
     console.log("GET request from Cohort dropdown.");
@@ -44,9 +49,9 @@ const fetchData = function FetchData() {
         console.log(responseData);
       }
   }
-  return [setDropdownBootcamp, dropdownBootcamp, bioData, fetchBootcampData, setBioData];
+  return [setDropdownBootcamp, dropdownBootcamp, fetchBootcampData];
 }
 
 
-export {useRegion, fetchData};
+export {useRegion, fetchData, bioState };
 
