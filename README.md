@@ -166,13 +166,14 @@ The `Hooks` folder contains the abstracted functions that handles states. They c
 `Data.js` is a file which contains hard-coded data, mimicking the shape of the data in the dynamic database.
 
 ### Color Reference
+### Color Reference
 
-| Color           | Hex                                                              |
-| --------------- | ---------------------------------------------------------------- |
-| Main Dark       | ![#171717](https://via.placeholder.com/10/171717?text=+) #171717 |
-| Main Light      | ![#f5f5f5](https://via.placeholder.com/10/f5f5f5?text=+) #f5f5f5 |
-| Lighter Feature | ![#23c0a5](https://via.placeholder.com/10/23c0a5?text=+) #23c0a5 |
-| Darker Feature  | ![#006262](https://via.placeholder.com/10/006262?text=+) #006262 |
+| Color           | Hex                                                                  |
+| --------------- | -------------------------------------------------------------------- |
+| Main Dark       | ![#171717](https://via.placeholder.com/10/171717/171717.png) #171717 |
+| Main Light      | ![#f5f5f5](https://via.placeholder.com/10/f5f5f5/f5f5f5.png) #f5f5f5 |
+| Lighter Feature | ![#23c0a5](https://via.placeholder.com/10/23c0a5/23c0a5.png) #23c0a5 |
+| Darker Feature  | ![#006262](https://via.placeholder.com/10/006262/006262.png) #006262 |
 
 ## Back-End Guide
 
