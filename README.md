@@ -135,7 +135,7 @@ Within the front-end React app, inside of the `src` folder we have a `components
 
 ### App
 
-State for the app is set in `App.js` and all handler functions and fetch requests to our API are currently performed inside of this file. `App.js` also returns the main components of the front-end and hands down the necessary props.
+All handler functions are currently performed inside of this file. `App.js` also returns the main components of the front-end and hands down the necessary props.
 
 ### Biography
 
@@ -156,6 +156,10 @@ Currently, the `Navbar` component sets up the structure for navigating our app o
 ### Searchbar
 
 The `Searchbar` currently allows users to search for a bootcamper by name. When the search button is clicked clicked, the component sends a GET request to retrieve relevant entries in the database, and will show any which match on-screen. Please refer to the back-end routing for the error-handling currently in place for this search function.
+
+### Hooks
+
+The `Hooks` folder contains the abstracted functions that handles states. They change states depending on the useEffects within the `app.js`. They are asynchronous functions that fetch our data from the API.
 
 ### Other Files
 
@@ -203,9 +207,7 @@ These are some of the future changes which are to be implemented to the app. Thi
 
 ### Short-Term Goals
 
-- Move the hooks to their own folders to improve readability.
 - React router to be implemented to achieve stretch goals.
-- End to end testing with Cypress.
 
 ### Stretch Goals
 
