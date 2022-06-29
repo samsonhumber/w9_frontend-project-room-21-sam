@@ -6,5 +6,3 @@ test("The Searchbar component renders a input field.", () => {
   const inputField = screen.getByRole("textbox");
   expect(inputField).toBeInTheDocument();
 });
-
-// TODO: figure out how to test nested components to test if Biography returns correctly when Searchbar used.

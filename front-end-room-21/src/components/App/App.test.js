@@ -1,10 +1,13 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from "@testing-library/react";
+import App from "./App";
 
-test('renders our app', () => {
+test("Renders our App and nested elements.", () => {
   render(<App />);
-  const linkElement = screen.getByText("Catch Up"); 
-  expect(linkElement).toBeInTheDocument();
+  const appElement = screen.getByRole("main");
+  const navElement = screen.getByRole("navigation");
+  const searchElement = screen.getByRole("textbox");
+
+  expect(appElement).toBeInTheDocument();
+  expect(navElement).toBeInTheDocument();
+  expect(searchElement).toBeInTheDocument();
 });
-
-
