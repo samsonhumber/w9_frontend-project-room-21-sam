@@ -4,22 +4,27 @@ import Dropdown from "../Dropdown/dropdown";
 import Searchbar from "../Searchbar/Searchbar.js";
 import { useState, useEffect } from "react";
 import { BioList } from "../BioList/bioList";
+import useRegion from "../../hooks";
 
 function App() {
   const [text, setText] = useState();
   const [searchtext, setSearchtext] = useState();
-  const [dropdownRegion, setdropDownRegion] = useState("");
+  //const [dropdownRegion, setdropDownRegion] = useState("");
   const [dropdownBootcamp, setDropdownBootcamp] = useState("");
-  const [bioData, setBioData] = useState([]);
+  //const [bioData, setBioData] = useState([]);
 
   function handleChange(e) {
     setText(e.target.value);
   }
 
+  
+
+  /*
   function handleDropdownSelect(e) {
     console.log("Region selected");
     setdropDownRegion(e.target.value);
   }
+  */
 
   function handleDropdownBootcamp(e) {
     console.log("Bootcamp selected");
@@ -31,6 +36,19 @@ function App() {
     setSearchtext(text);
   }
 
+  const [dropdownRegion, setDropdownRegion, bioData, fetchRegionData, setBioData] = useRegion();
+
+  function handleDropdownRegion(e) {
+    console.log("Region selected");
+    setDropdownRegion(e.target.value);
+  }
+  
+  useEffect(() => {
+     fetchRegionData();
+  }, [dropdownRegion])
+
+
+/*
   useEffect(() => {
     async function fetchRegionData() {
       console.log("GET request from Region dropdown.");
@@ -49,7 +67,7 @@ function App() {
     }
     fetchRegionData();
   }, [dropdownRegion]);
-
+*/
   useEffect(() => {
     async function fetchBootcampData() {
       console.log("GET request from Cohort dropdown.");
@@ -89,6 +107,8 @@ function App() {
     fetchNameSearch();
   }, [searchtext]);
 
+
+
   return (
     <main className="App">
       <Navbar />
@@ -99,7 +119,7 @@ function App() {
           handleAdd={handleAdd}
         />
         <Dropdown
-          handleDropdownSelect={handleDropdownSelect}
+          handleDropdownSelect={handleDropdownRegion}
           handleDropdownBootcamp={handleDropdownBootcamp}
         />
       </div>
