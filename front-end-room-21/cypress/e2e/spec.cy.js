@@ -18,9 +18,26 @@ describe("Test checking the Searchbar returns the correct name.", () => {
   });
 });
 
-describe("Test checking the Dropdown returns the correct Biographies.", () => {
+describe("Test checking the Dropdown region returns the  Biographies with the correct region.", () => {
   it.only("Clicks the Dropdowns, selects an option, and the correct result shows on page", () => {
-    cy.visit("http://localhost:3000/");
-    cy.get("selector");
+    cy.visit("http://localhost:3000/")
+    cy.get(".dropdown-region")
+   .select('North West')
+   .get('.div-container')
+    .contains('Jim')
+    
+
   });
 });
+describe("Test checking the Dropdown bootcampers cohort select the correct Biographies with in the Cohort.", () => {
+  it.only("Clicks the Dropdowns, selects an option, and the correct result shows on page", () => {
+    cy.visit("http://localhost:3000/")
+    cy.get(".dropdown-bootcamp")
+   .select('Cohort 1')
+   .get('.div-container')
+    .contains('Toby')
+    
+
+  });
+});
+
