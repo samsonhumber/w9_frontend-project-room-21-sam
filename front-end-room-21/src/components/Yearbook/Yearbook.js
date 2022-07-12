@@ -17,20 +17,35 @@ function Yearbook({ filters }) {
   
   function handleDropdownSelect(e) {
       console.log("Category selected");
-      setRequestEntry({category: e.currentTarget.name, value: e.target.value});
+      const newRequestEntry = {...requestEntry};
+      newRequestEntry[e.currentTarget.name] = e.target.value;
+      console.log(e.currentTarget.name);
+      setRequestEntry(newRequestEntry);
+      // I now want the requestEntry object to be of form {name: {text}, category1: {category1state}, category2...}
   }
   
   function handleSearch() {
       console.log("The Search Button was clicked.");
-      setRequestEntry({category: "name", value: text});
+      const newRequestEntry = {...requestEntry};
+      newRequestEntry.name = text;
+      setRequestEntry(newRequestEntry);
+  }
+
+  function makeUrl(requestEntry) {
+    const keys = Object.keys(requestEntry);
+    let url = `http://localhost:9000/profiles/?`;
+    keys.forEach((key, index) => {
+      url += `${String(key)}=${requestEntry[String(key)]}&`;
+    })
+    return url.slice(0, -1);
   }
 
   useEffect(() => {
       async function fetchCategoryData() {
         console.log("GET request from a dropdown or search bar.");
-        try {
-          const url = "http://localhost:9000/profiles/?" + requestEntry.category + "=" + requestEntry.value;
-          console.log(url);
+        const url = makeUrl(requestEntry);
+        console.log(url);
+        try {         
           const response = await fetch(url);
           const responseJSON = await response.json();
           const responseData = responseJSON.payload;
