@@ -2,7 +2,7 @@
  For text filters, you must set the default value to "any",
  for positive integer filters you must set it to 0 
  Contact printerfissh693@gmail.com if you want to use "any" as data or want another filter type
- */
+*/
 
 const region = [
     { text: "Select a region", value: "any" },
