@@ -1,5 +1,11 @@
+/*
+ For text filters, you must set the default value to "any",
+ for positive integer filters you must set it to 0 
+ Contact printerfissh693@gmail.com if you want to use "any" as data or want another filter type
+ */
+
 const region = [
-    { text: "Select a region", value: " " },
+    { text: "Select a region", value: "any" },
     { text: "West Midlands", value: "West%Midlands" },
     { text: "East Midlands", value: "East%Midlands" },
     { text: "Greater London", value: "Greater%London" },
@@ -28,7 +34,7 @@ const region = [
   ];
 
   const jobTitle = [
-    {text: 'Select a job title', value: " "},
+    {text: 'Select a job title', value: "any"},
     {text: 'Bootcamper', value: 'bootcamper'},
     {text: 'Front-end Developer', value: 'frontend'},
     {text: 'Back-end Developer', value: 'backend'},
